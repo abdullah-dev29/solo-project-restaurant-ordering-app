@@ -27,12 +27,12 @@ const menuArray = [
     emoji: "🍣",
     id: 3
     },
-//     {
-//     name: "Ice Cream",
-//     ingredients: ["milk, sugar, cream, vanilla"],
-//     price: 6,
-//     emoji: "🍨",
-//     id: 4
-// }
+    {
+    name: "Ice Cream",
+    ingredients: ["milk, sugar, cream, vanilla"],
+    price: 6,
+    emoji: "🍨",
+    id: 4
+}
 ]
 export default menuArray
