@@ -1,0 +1,152 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    background: #f7f7f7;
+}
+
+header, main {
+    width: 360px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+img {
+    width: 100%;
+}
+main {
+    height: 550px;
+    padding-top: 5px;
+    overflow-y: auto;
+}
+
+.feed {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.child {
+    width: 88%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+    border-radius: 6px;
+    margin-bottom: 2px;
+}
+
+.card-details {
+    background-color: #ffffff;
+    width: 300px;
+    height: 250px;
+    padding: 10px 10px;
+    border-radius: 6px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+}
+
+button, input {
+    padding: 10px;
+    width: 85%;
+    text-align: start;
+    border-radius: 3px;
+}
+
+input {
+     border: 1px solid #757575;
+}
+input::placeholder{
+    color: #757575;
+    opacity: 0.8;
+   
+}
+button {
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #16DB99;
+    color: white;
+    border: none;
+}
+
+.card-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.card-head h3{
+    margin: auto;
+    margin-top: 12px;
+}
+
+.child > span {
+    font-size: 60px;
+}
+
+.child-attributes {
+    width: 60%;
+    height: 60px;
+}
+
+.title {
+    display: block;
+    font-size: 17px;
+}
+
+.child-attributes p {
+    margin: 3px 0 6px 0;
+    font-size: 12px;
+    color: #8B8B8B;
+
+}
+.title, .price {
+    font-weight: bold;
+}
+
+.price {
+    font-size: 14px;
+}
+
+.add-btn {
+    border: 1px solid #d9d9d9;
+    color: #6b7280;
+
+    margin: auto 0 auto auto;
+    font-size: 14px;
+}
+
+.close-btn {
+    color: #16DB99;
+    margin: 0 0 auto auto;
+    border: 1px solid #16DB99;
+    font-size: 12px;
+}
+
+.add-btn, .close-btn {
+    padding: 6px 6px;
+    border-radius: 50%;
+}
