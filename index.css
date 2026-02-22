@@ -139,6 +139,7 @@ main {
     gap: 13px;
     z-index: 2;
 }
+
 .visible {
     display: flex;
 }
