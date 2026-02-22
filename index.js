@@ -11,6 +11,8 @@ document.addEventListener('click', (e)=> {
         handleAddClick(e.target.dataset.add)
     } else if(e.target.id === 'complete-order') {
         handleCompleteOrderClick()
+    } else if (e.target.id === 'close-card') {
+        handleCloseCardClick()
     }
 })
 
@@ -22,6 +24,10 @@ function handleAddClick(ItemId){
 function handleCompleteOrderClick() {
     CardDetails.innerHTML = getCardHtml()
     CardDetails.classList.add('visible')
+}
+
+function handleCloseCardClick() {
+    CardDetails.classList.remove('visible')
 }
 
 
@@ -76,7 +82,7 @@ function getCardHtml () {
     return `
             <div class="card-head">
                 <h3>Enter card details</h3>
-                <i class="fa-solid fa-xmark close-btn" data-close="close-card"></i>
+                <i class="fa-solid fa-xmark close-btn" id="close-card"></i>
             </div>
             <form action="" method="">
                 <input type="text" name="full-name" id="full-name" placeholder="Enter your name" required>
