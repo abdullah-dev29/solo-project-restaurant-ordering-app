@@ -57,7 +57,9 @@ main {
     overflow-y: auto;
 }
 
-.orders-total, .ordered-item {
+.orders-total,
+.ordered-item
+{
     margin-top: 5px;
     width: 90%;
     padding: 4px 4px;
@@ -193,7 +195,8 @@ main {
 
 .home-btn:hover,
 .home-btn:active,
-.home-btn :focus {
+.home-btn :focus
+{
     color: #ffffff;
     background-color: #12b886; 
 }
@@ -281,7 +284,9 @@ input::placeholder{
     color: #8B8B8B;
 
 }
-.title, .price {
+.title,
+.price
+{
     font-weight: bold;
 }
 
@@ -315,21 +320,28 @@ input::placeholder{
     transition: all 0.2s ease;
 }
 
-.close-btn:hover, .close-btn:focus {
+.close-btn:hover,
+.close-btn:focus,
+.close-btn:active
+{
     Color: #ffffff;
     background-color: #ff5a5f;
     border: 1px solid #ff5a5f;
 
 }
 
-.add-btn, .close-btn {
+.add-btn,
+.close-btn
+{
     padding: 6px 6px;
     border-radius: 50%;
     cursor: pointer;
 }
 
 /* Scrollbar hide */
-.feed::-webkit-scrollbar,.ordered-items::-webkit-scrollbar {
+.feed::-webkit-scrollbar,
+.ordered-items::-webkit-scrollbar
+{
     display: none;
 }
 .feed, .ordered-items  {
