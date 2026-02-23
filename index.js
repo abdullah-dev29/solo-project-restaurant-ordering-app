@@ -17,6 +17,10 @@ document.addEventListener('click', (e)=> {
         handleCloseCardClick()
     } else if (e.target.dataset.removeId) {
         handleRemoveClick(e.target.dataset.removeId)
+    } else if(e.target.dataset.star) {
+        handleStarClick(e.target.dataset.star)
+    } else if (e.target.id === 'home-btn') {
+        handleHomeClick()
     }
 })
 
@@ -68,6 +72,27 @@ function handleCloseCardClick() {
     cardDetails.classList.remove('visible')
 }
 
+function handleStarClick(starId) {
+    const star = document.getElementById(`${starId}`)
+    if (star.classList.contains('filled')) {
+        star.classList.remove('fa-solid', 'filled')
+        star.classList.add('fa-regular')
+    } else {
+        star.classList.add('fa-solid', 'filled')
+        star.classList.remove('fa-regular')
+    }
+}
+
+function handleHomeClick() {
+    orderItems = [];
+    document.getElementById('confirmation-rating').style.display = 'none';
+    document.getElementById('confirmation-rating').innerHTML = '';
+    orderSummary.classList.remove('visible');
+    orderSummary.innerHTML = '';
+    cardDetails.classList.remove('visible');
+    cardDetails.innerHTML = '';
+    render();
+}
 
 function getFeedHtml() {
     const feedHtml = menuArray.map(function(menuItem) {
@@ -134,15 +159,16 @@ function getCardHtml () {
 function getConfirmationMessage(userName) {
     return `
         <div class="confirmation">
-            <span>Thanks, ${userName}! Your order is on its way!</span>
+          <span>Thanks, ${userName} Your order is on its way!</span>
         </div>
         <div class="rating" id="rating">
-        <span>Rate US: </span>
-            <i class="fa-regular fa-star" id="1" data-star="1"></i>
-            <i class="fa-regular fa-star" id="2" data-star="2"></i>
-            <i class="fa-regular fa-star" id="3" data-star="3"></i>
-            <i class="fa-regular fa-star" id="4" data-star="4"></i>
-            <i class="fa-regular fa-star" id="5" data-star="5"></i>
+          <span>Rate US: </span>
+          <i class="fa-regular fa-star" id="1" data-star="1"></i>
+          <i class="fa-regular fa-star" id="2" data-star="2"></i>
+          <i class="fa-regular fa-star" id="3" data-star="3"></i>
+          <i class="fa-regular fa-star" id="4" data-star="4"></i>
+          <i class="fa-regular fa-star" id="5" data-star="5"></i>
+          <button type="button" class="home-btn" id="home-btn">Home</button>
         </div>
     `
 }
