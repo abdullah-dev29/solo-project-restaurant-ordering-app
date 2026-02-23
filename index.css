@@ -7,7 +7,7 @@ body {
 }
 
 header, main {
-    width: 360px;
+    width: 550px;
     margin: 0 auto;
     background-color: #ffffff;
 }
@@ -17,18 +17,18 @@ img {
 }
 main {
     position: relative;
-    height: 480px;
+    height: 550px;
 }
 
 .feed {
-    height: 300px;
+    height: 350px;
     overflow-y: auto;
     margin-bottom: 25px;
 }
 
 .child {
     width: 88%;
-    height: 120px;
+    height: 150px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -47,13 +47,13 @@ main {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    height: 180px;
+    height: 220px;
     background-color: #fff;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     z-index: 1;
 }
 .ordered-items {
-    max-height: 75px;
+    max-height: 90px;
     overflow-y: auto;
 }
 
@@ -90,7 +90,10 @@ main {
     transition: all 0.2s ease;
 }
 
-.ordered-item button:hover,.order-items button:focus{
+.ordered-item button:hover,
+.order-items button:focus,
+.order-items button:active
+{
     color: #ffffff;
     background-color: #ff5a5f;
 }
@@ -117,7 +120,10 @@ main {
     cursor: pointer;
     transition: all 0.2s ease;
 }
-.complete-order:hover, .complete-order:focus {
+.complete-order:hover, 
+.complete-order:focus,
+.complete-order:active
+{
     color: #ffffff;
      background-color: #12b886;
 }
@@ -125,8 +131,8 @@ main {
 .card-details {
     display: none;
     background-color: #ffffff;
-    width: 300px;
-    height: 250px;
+    width: 420px;
+    height: 300px;
     padding: 10px 10px;
     border-radius: 6px;
     position: fixed;
@@ -145,7 +151,7 @@ main {
     display: none;
     padding: 10px 20px;
     margin-top: 20px;
-    height: 125px;
+    height: 130px;
     background-color: #ECFDF5;
 }
 .confirmation {
@@ -236,7 +242,10 @@ input::placeholder{
     border: none;
 }
 
-.payment:hover, .payment:focus {
+.payment:hover,
+.payment:focus,
+.payment:active
+{
     color: #ffffff;
     background-color: #12b886;
 }
@@ -288,7 +297,11 @@ input::placeholder{
     transition: all 0.2s ease;
 }
 
-.add-btn:hover, .add-btn:focus {
+.add-btn:hover,
+.add-btn:focus,
+.add-btn:active
+
+{
     background-color: #16DB99;
     border-color: #16DB99;
     color: white;
