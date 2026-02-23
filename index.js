@@ -1,10 +1,10 @@
 import menuArray from '/data.js'
+import {v4 as uuidv4} from 'https://jspm.dev/uuid'
 
-let orderedItems = []
-let sum = 0
+let orderItems = []
 
-const orderSummary = document.getElementById('order-summary')
 const CardDetails = document.getElementById('card-details')
+const orderSummary = document.getElementById('order-summary')
 
 document.addEventListener('click', (e)=> {
     if(e.target.dataset.add) {
@@ -13,12 +13,38 @@ document.addEventListener('click', (e)=> {
         handleCompleteOrderClick()
     } else if (e.target.id === 'close-card') {
         handleCloseCardClick()
+    } else if (e.target.dataset.removeId) {
+        handleRemoveClick(e.target.dataset.removeId)
     }
 })
 
-function handleAddClick(ItemId){
-    orderSummary.innerHTML = getOrderSummary(ItemId)
+function addOrderItem(itemId) {
+    orderItems.push(
+        ...menuArray
+            .filter(item => item.id === Number(itemId)) // Here I find out matching item (Selection)
+            .map(filterItem => {   // Here I make Copy of it (Transformation)
+                return {
+                     ...filterItem,
+                    orderId: uuidv4() // Here I added OrderId
+                }
+            })
+    ) // Here lastly I push it to Ordered Items
+}
+
+function handleAddClick(itemId){
+    addOrderItem(itemId)
+    orderSummary.innerHTML = getOrderSummary()
     orderSummary.classList.add('visible')
+
+}
+
+function handleRemoveClick(itemOrderId) {
+    orderItems = orderItems.filter(item => item.orderId !== itemOrderId)
+    orderSummary.innerHTML =getOrderSummary()
+
+    if(orderItems.length === 0){
+        orderSummary.classList.remove('visible')
+    }
 }
 
 function handleCompleteOrderClick() {
@@ -49,19 +75,19 @@ function getFeedHtml() {
     return feedHtml
 }
 
-function getOrderSummary(ItemId) {
-    orderedItems.push(...(menuArray.filter(item => item.id == ItemId)))
+function getOrderSummary() {
+    let sum = 0
     let orderSummaryHtml = ''
     orderSummaryHtml += `
         <h3>Your Order</h3>
         <div class="ordered-items">
     `
-    orderedItems.forEach((item)=>{
-        const {name,price,id} = item
+    orderItems.forEach((item)=>{
+        const {name,price,orderId} = item
         sum += price
         orderSummaryHtml+=`
-            <div class="ordered-item">
-                <span>${name}</span><button id="${id}">remove</button>
+            <div class="ordered-item" id="${orderId}">
+                <span>${name}</span><button data-remove-id="${orderId}">remove</button>
                 <span class="item-price">$${price}</span>
             </div>
         `
