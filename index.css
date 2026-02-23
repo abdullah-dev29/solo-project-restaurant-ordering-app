@@ -23,6 +23,7 @@ main {
 .feed {
     height: 300px;
     overflow-y: auto;
+    margin-bottom: 25px;
 }
 
 .child {
@@ -140,6 +141,43 @@ main {
     z-index: 2;
 }
 
+.confirmation-rating {
+    display: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    height: 90px;
+}
+
+.confirmation {
+    border-radius: 8px;
+    padding: 15px 12px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #065F46;
+    background-color: #ECFDF5;
+    margin-bottom: 8px;
+}
+
+.rating {
+    display: none;
+    width: 60%;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+    color: #065F46;
+    background-color: #ECFDF5;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.filled {
+    color: #12b886;
+}
+
+.rating span {
+    font-weight: bold;
+}
 .visible {
     display: flex;
 }

@@ -3,8 +3,10 @@ import {v4 as uuidv4} from 'https://jspm.dev/uuid'
 
 let orderItems = []
 
-const CardDetails = document.getElementById('card-details')
+const cardDetails = document.getElementById('card-details')
 const orderSummary = document.getElementById('order-summary')
+
+
 
 document.addEventListener('click', (e)=> {
     if(e.target.dataset.add) {
@@ -48,12 +50,22 @@ function handleRemoveClick(itemOrderId) {
 }
 
 function handleCompleteOrderClick() {
-    CardDetails.innerHTML = getCardHtml()
-    CardDetails.classList.add('visible')
+    cardDetails.innerHTML = getCardHtml()
+    cardDetails.classList.add('visible')
+    document.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault()
+    const userName = document.getElementById('full-name')
+    const confirmationEl = document.getElementById('confirmation-rating')
+    cardDetails.classList.remove('visible')
+    orderSummary.classList.remove('visible')
+    confirmationEl.innerHTML = getConfirmationMessage(userName.value)
+    confirmationEl.style.display = 'block'
+    setTimeout(()=> document.getElementById('rating').style.display = 'block',2000)
+})
 }
 
 function handleCloseCardClick() {
-    CardDetails.classList.remove('visible')
+    cardDetails.classList.remove('visible')
 }
 
 
@@ -116,6 +128,22 @@ function getCardHtml () {
                 <input type="text" name="CVV" id="CVV" placeholder="Enter CVV">
                 <button class="payment">Pay</button>
             </form>
+    `
+}
+
+function getConfirmationMessage(userName) {
+    return `
+        <div class="confirmation">
+            <span>Thanks, ${userName}! Your order is on its way!</span>
+        </div>
+        <div class="rating" id="rating">
+        <span>Rate US: </span>
+            <i class="fa-regular fa-star" id="1" data-star="1"></i>
+            <i class="fa-regular fa-star" id="2" data-star="2"></i>
+            <i class="fa-regular fa-star" id="3" data-star="3"></i>
+            <i class="fa-regular fa-star" id="4" data-star="4"></i>
+            <i class="fa-regular fa-star" id="5" data-star="5"></i>
+        </div>
     `
 }
 
