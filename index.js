@@ -87,9 +87,9 @@ function handleHomeClick() {
     orderItems = [];
     document.getElementById('confirmation-rating').style.display = 'none';
     document.getElementById('confirmation-rating').innerHTML = '';
-    orderSummary.classList.remove('visible');
+    // orderSummary.classList.remove('visible');
     orderSummary.innerHTML = '';
-    cardDetails.classList.remove('visible');
+    // cardDetails.classList.remove('visible');
     cardDetails.innerHTML = '';
     render();
 }
