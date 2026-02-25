@@ -23,7 +23,6 @@ main {
 .feed {
     height: 60%;
     overflow-y: auto;
-    margin-bottom: 10px;
 }
 
 .child {
@@ -43,10 +42,10 @@ main {
     border-radius: 4px;
     margin: 0 auto;
     width: 95%;
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     display: none;
     flex-direction: column;
     justify-content: space-around;
