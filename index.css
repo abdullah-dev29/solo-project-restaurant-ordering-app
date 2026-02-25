@@ -23,7 +23,7 @@ main {
 .feed {
     height: 45%;
     overflow-y: auto;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .child {
@@ -40,7 +40,7 @@ main {
 }
 
 .order-summary {
-    border-radius: 4px;
+    border-radius: 6px;
     margin: 0 auto;
     width: 95%;
     display: none;
@@ -50,6 +50,7 @@ main {
     background-color: #fff;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     z-index: 1;
+    margin-top: 20px;
 }
 .ordered-items {
     overflow-y: auto;
