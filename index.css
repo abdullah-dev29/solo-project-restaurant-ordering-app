@@ -21,7 +21,7 @@ main {
 }
 
 .feed {
-    height: 60%;
+    height: 45%;
     overflow-y: auto;
     margin-bottom: 20px;
 }
