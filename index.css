@@ -21,9 +21,9 @@ main {
 }
 
 .feed {
-    border: 2px dotted;
     height: 60%;
     overflow-y: auto;
+    margin-bottom: 10px;
 }
 
 .child {
