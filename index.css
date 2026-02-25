@@ -21,9 +21,9 @@ main {
 }
 
 .feed {
-    height: 45%;
+    height: 50%;
     overflow-y: auto;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .child {
@@ -50,7 +50,7 @@ main {
     background-color: #fff;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     z-index: 1;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .ordered-items {
     overflow-y: auto;
