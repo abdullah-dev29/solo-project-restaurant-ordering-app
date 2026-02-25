@@ -23,7 +23,7 @@ main {
 .feed {
     height: 50%;
     overflow-y: auto;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .child {
