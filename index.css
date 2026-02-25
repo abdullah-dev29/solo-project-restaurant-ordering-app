@@ -16,12 +16,10 @@ img {
 }
 main {
     position: relative;
-    height: 100vh;
-
 }
 
 .feed {
-    height: 50%;
+    max-height: 450px;
     overflow-y: auto;
     margin-bottom: 25px;
 }
@@ -50,7 +48,6 @@ main {
     background-color: #fff;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     z-index: 1;
-    margin-top: 25px;
 }
 .ordered-items {
     overflow-y: auto;
