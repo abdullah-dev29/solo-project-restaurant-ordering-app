@@ -40,6 +40,7 @@ main {
 }
 
 .order-summary {
+    border-radius: 4px;
     margin: 0 auto;
     width: 95%;
     position: absolute;
